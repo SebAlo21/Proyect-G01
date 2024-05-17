@@ -14,4 +14,8 @@
 --- 
 ## Tecnologias en uso: 
 
-[!IMPORTANT]
+> [!IMPORTANT]
+> [!NOTE]
+> [!TIP]
+> [!WARNING]
+> [!CAUTION]
