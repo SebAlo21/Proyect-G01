@@ -15,7 +15,27 @@
 ## Tecnologias en uso: 
 
 > [!IMPORTANT]
+>Angular, MongoDb, Boostrap,optional(SpotifyAPi)
+
+>[!CAUTION]
+>EStructura del proyecto:
+>Carpeta Admin -> Dedicada a los componentes de Administracion de Conmponentes
+> Articles  -> Dedicada a las pantallas.
+> Auth -> Dedicada al login y autenticacion
+> Core -> Componentes con logica 
+> Shared -> Componentes reutilizables en todo el proyecto
+
+
+
+
+
+
+
+
+
+<!-- 
 > [!NOTE]
 > [!TIP]
 > [!WARNING]
-> [!CAUTION]
+> [!CAUTION] 
+-->
