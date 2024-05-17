@@ -1,5 +1,5 @@
 # Proyecto-G01
-!()
+
 ### INTEGRANTES 
 
 - Sebastian Alonso Saravia Lima
