@@ -1,0 +1,20 @@
+<section class=" w-100 text-center m-5">
+    <div class="login-container w-50 mx-auto p-3 rounded">
+
+        <div>
+            @if(isLogged){
+                <img class="img-user" src="https://github.com/{{username}}.png" alt="github-img">
+            }@else{
+                <img class="img-user" src="../../assets/user_waiting.png" alt="">
+            }
+        </div>
+        
+        <div class="w-50 mx-auto mt-3">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Username</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="username">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Log In" (click)="isLogged=true">
+        </div>
+    </div>
+</section>
