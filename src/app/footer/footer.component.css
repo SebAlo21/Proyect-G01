@@ -1,0 +1,39 @@
+
+footer div{
+    width: 100%;
+    
+}
+footer p{
+    margin: 0px;
+    text-align: center;
+    padding: 20px 60px;
+    color: #EBE9C0;
+}
+footer div:nth-child(1){
+    background-color: #E77738;
+    padding: 20px 0px;
+}
+footer div:nth-child(2){
+    background-color: #d66a31;
+}
+#contenedor-redes{
+    display: flex; 
+    width: 400px;
+    margin: auto;
+    padding: 0px;
+    padding: 20px 0px;
+}
+@media only screen and (max-width: 468px){
+    #contenedor-redes{
+        width: 100%;
+    }
+}
+.redes{
+    width: 15%;
+    list-style: none;
+    text-align: center;
+    margin: auto;
+}
+.redes img{
+    width: 30px;
+}

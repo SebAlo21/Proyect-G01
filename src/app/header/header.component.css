@@ -1,0 +1,33 @@
+
+#contenedor-header{
+   background-color: #e77738;
+    display: flex;
+    width: 100%;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 100px;
+}
+#contenedor-header a {
+    text-decoration: none;
+    color: #ECE9C0;
+}
+#contenedor-header ul{
+    margin: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item{
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+#contenedor-header img{
+    height: 40px;
+}
