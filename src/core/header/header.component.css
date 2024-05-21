@@ -10,35 +10,22 @@
     .navbar{
         background-color: var(--primary-color);
     }
+
+    img{
+        width:70px;
+        image-rendering: auto;
+    }
     
     a{
         color: #e77739;
     }
-
-    /* ul{
+    .user-container{
+        width: 30%;
+        /* border: 1px solid red; */
         display: flex;
-        flex: row;
-        flex-wrap: wrap;
-        margin:0 auto;
-        width: 50%;
-        background-color: red;
-        height: 3em;
-        gap: 20%;
-        margin-top: 2em;
-
-    } */
-    /* ul li{
-        list-style: none;
-        font-size: 1.3em;
-        
-    } */
-    /* a{
-        text-decoration: none;
-        color: var(--orange-color);
-        letter-spacing:2px;
-    } */
-
-    img{
-        height: 64px;
-        margin: 1em;
-    }   
+        justify-content: end;
+        margin-right:1em;
+        align-items: center;
+        gap:1em;
+    }
+    

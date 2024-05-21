@@ -1,7 +1,16 @@
-.login-container{
-    background:#202124;
+section{
+    position: absolute;
 }
-img{
-    width:256px;
-    border-radius:50%;
+
+.login-container{
+    background:rgba(0, 0, 0, .7);
+    top: 20%;
+}
+
+
+i{
+    z-index: 100;
+    
+    width: 20px;
+    height: 20px;
 }
