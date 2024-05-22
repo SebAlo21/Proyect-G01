@@ -1,16 +1,20 @@
 section{
     position: absolute;
+    color: #fff;
+    top: 25%;
+    left: 33.6%;
+   
+}
+.popup-login{
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    padding: .5em;
+    background:linear-gradient(45deg,#b16cea,#ff5e69,#ff8a56,#ffa84b);
+    border-radius:1em ;
+    
 }
 
 .login-container{
-    background:rgba(0, 0, 0, .7);
-    top: 20%;
-}
-
-
-i{
-    z-index: 100;
-    
-    width: 20px;
-    height: 20px;
+    background:#151613;
 }
