@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LoginFormComponent } from '../login-form/login-form.component';
-import { LoginButtonComponent } from '../login-button/login-button.component';
-import { LogoComponent } from '../logo/logo.component';
+
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule,LoginButtonComponent,LoginFormComponent,LogoComponent],
+  imports: [RouterModule,LoginFormComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

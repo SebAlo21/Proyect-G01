@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MyListComponent } from '../../articles/my-list/my-list.component';
+import { MyListComponent } from '../../app/articles/my-list/my-list.component';
 import { OutletContext, RouterModule } from '@angular/router';
 
 @Component({

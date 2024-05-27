@@ -1,9 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root{
-    --primary-color:#202124;
-    --orange-color:#E77739;
-    
+    --primary-color:#323232;
+    --secondary-color:#181818;
+    --ter-color:#FFFFFF;
+    --four-color:rgb(185, 92, 38);
+    --font-family:"Karantina", system-ui;
+    --font-size:1.1rem;
+    --font-size-2: 1.4rem;
+    --font-size-titulo: 3.6rem;
 }
 
-
+html,
+body {
+    margin: 0;
+    padding: 0;
+    /*background-color: var(--secondary-color);*/
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var( --ter-color);
+    background-color: var(--secondary-color);
+ 
+}

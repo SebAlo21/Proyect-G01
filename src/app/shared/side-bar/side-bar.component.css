@@ -1,0 +1,41 @@
+.side-bar{
+    width: 15.5rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: .5rem 1rem;
+    background-color: var(--four-color);
+}
+#container-logo{
+    width: 60%;
+    padding: 10px 0px;
+    cursor: pointer;
+}
+#container-logo img{
+    width: 100%;
+}
+.side-bar-list{
+    list-style:none;
+    padding:0;
+    margin: 0;
+    padding: 0.5rem;
+}
+.side-bar-list .list-span{
+    font-weight: 400;
+    letter-spacing: 1.2px;
+}
+.side-bar-list .container-li{
+    font-size: 1.2rem; 
+    display: flex;
+    align-items: center; 
+}
+ 
+.side-bar-separator{
+    margin: 1rem 0; 
+    border-bottom:solid 1px var(--ter-color);
+}
+ 
+.side-bar-list li{
+    cursor: pointer;
+}

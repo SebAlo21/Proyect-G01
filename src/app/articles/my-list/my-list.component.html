@@ -1,0 +1,22 @@
+
+<div class="container-album">
+    <h1>Álbum Populares</h1>
+    <ul>
+        @if(listaAlbum.length>0){
+            @for(album of listaAlbum;track album.id){
+                <li>
+                    <div class="container-card">
+                        <span>Nombre Artista: {{album.artists[0].name}} </span>
+                        <span >Nombre Album: {{album.name}}</span>
+                        <span >Fecha Salida: {{album.release_date}}</span>
+                        <span >Total Canciones: {{album.total_tracks}}</span>
+                        <img  [src]="album.images[0].url" >             
+                        
+                    </div>
+                </li>
+             }
+        }
+      
+    </ul>
+
+</div>

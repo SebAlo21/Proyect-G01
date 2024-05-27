@@ -1,0 +1,27 @@
+<div class="side-bar"> 
+    <div id="container-logo">
+        <img src="../../../assets/img/music-box-logo-alt.png">
+    </div>
+    <ul class="side-bar-list">
+        @for(listaMenu of menuPrincipal;track listaMenu.name){
+            <li [routerLink]="listaMenu.router" >
+                <div class="container-li">
+                    <i [ngClass]="['fa-solid',listaMenu.icon]"></i>
+                    <span class="side-bar-list list-span">{{listaMenu.name}}</span>
+                </div>
+            </li>
+        }
+       
+    </ul>
+    <div class="side-bar-separator"></div>
+    <ul class="side-bar-list "> 
+        @for(listaRecomendados of listaRecomendados;track listaRecomendados.name){
+            <li >
+                <div class="container-li ">
+                    <span class="side-bar-list list-span">{{listaRecomendados.name}}</span>
+                </div>
+            </li>
+        }
+      
+    </ul>
+</div>
