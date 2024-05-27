@@ -1,0 +1,29 @@
+
+<section class="text-center position-absolute popup-login" >
+    <div class="login-container mx-auto p-3 rounded position-relative">
+        <div class="text-white">
+            <br>
+            <h3>INSERT YOUR GITHUB USERNAME</h3>            
+            <br>
+        </div>
+        <div>
+            @if(isLogged){
+                <img class="w-25 rounded-circle" src="https://github.com/{{username}}.png" alt="">
+            }@else{
+                <img class="w-25" src="../../assets/user_waiting.png" alt="">
+            }
+        </div>
+
+        <div class="w-50 mx-auto mt-3 text-center">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Username</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="username">
+            </div>
+            <div class="text-center ">
+                <input class="btn btn-primary " style="margin-right: .5em;" type="submit" value="Log In"  (click)="sendUsername(username)">
+                <button type="button" class="btn btn-danger" style="margin-left:.5em;" (click)="sendStateForm(false)">Close</button>
+            </div>
+        </div>
+    </div>
+
+</section>
