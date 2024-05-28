@@ -4,8 +4,8 @@ import { Injectable } from "@angular/core";
     providedIn:'root'
 })
 export class spotifyService{
-    clientId = 'cb2143879a564de7a8ffed71fbeeed21';
-    clientSecret = 'cb62067e5ea94222bab7d4eb98f57cd1';
+    clientId = '';
+    clientSecret = '';
 
     async spotifyToken():Promise<any>{
         const response = await fetch('https://accounts.spotify.com/api/token', {
