@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from '../../login/pages/login.component'; 
 
 @Component({
   selector: 'app-side-bar',
@@ -10,11 +11,16 @@ import { RouterModule } from '@angular/router';
   styleUrl: './side-bar.component.css'
 })
 export class SideBarComponent implements OnInit{
+ 
 
   menuPrincipal:Array<any>=[]
   listaRecomendados:Array<any>=[]
+
   
    ngOnInit(): void {
+
+  
+
      this.menuPrincipal=[
       {
         name:'principal',

@@ -1,0 +1,57 @@
+.container-img{
+    background-image: url('../../../assets/img/fondo2.jpg');
+    position: relative;
+    height: 100vh; 
+    background-size: cover;
+    background-position: center;
+}
+.container-login{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-4);
+    color: var(--color-3);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.container-login h1{
+    color: var(--primary-color);
+}
+.login{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.form{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.form-button{
+width: 100%;
+background-color: var(--ter-color);
+}
+.container-input{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+.container-input label{
+    color: var(--primary-color);
+}
+.form-button button{
+width: 100%;
+    background-color: transparent;
+    border: 0;
+    color: var(--four-color);
+    transition: 1.s;
+}
+.form-button button:hover{
+color: var(--primary-color);
+}

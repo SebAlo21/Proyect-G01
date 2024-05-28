@@ -39,3 +39,21 @@
 .side-bar-list li{
     cursor: pointer;
 }
+.container-logo{
+    width: 90%;
+    background-color: var(--ter-color);
+}
+.container-logo img{
+    width: 100%;
+}
+.container-logo button{
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    color: var(--four-color);
+    transition: 1s;
+}
+.container-logo button:hover{
+ 
+    color: var(--primary-color);
+}

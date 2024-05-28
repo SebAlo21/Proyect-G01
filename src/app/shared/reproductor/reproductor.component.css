@@ -1,0 +1,44 @@
+
+#container-reproductor{
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    height: 85px;
+    border-top: solid 1px var( --primary-color);
+    box-shadow: 0px -15px 15px 7px #0000002e;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.reproductor:nth-child(1){
+    display: flex;
+    flex-direction: column;
+}
+.reproductor:nth-child(2){
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.container-button {
+display: flex;
+justify-content: center;
+align-self: center;
+gap: .5rem;
+}
+ 
+.button{
+    background-color: transparent;
+    border: 0;
+    color: var(--four-color);
+    transition: 1s;
+   padding: 1.5rem;
+    font-size: 1.65rem;
+}
+.button:hover{
+    opacity: .7;
+}

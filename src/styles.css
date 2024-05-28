@@ -22,3 +22,6 @@ body {
     background-color: var(--secondary-color);
  
 }
+button{
+    padding: 0px;
+}
