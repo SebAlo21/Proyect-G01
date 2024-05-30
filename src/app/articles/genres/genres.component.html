@@ -1,12 +1,15 @@
 <div class="container-genres">
     <h1>Géneros Musicales</h1>
     <ul >
-    @for(listaGenero of listaGeneros;track listaGenero.name){
-     <li class="container-li">
-        <img  [src]="listaGenero.imagen" [alt]="listaGenero.name"> 
-        <span class="list-span">{{listaGenero.name}}</span>
-     </li>
-    }
+        @if(listaGeneros.length>0){
+            @for(categorie of listaGeneros;track categorie.id){
+                <li>
+                    <img [src]="categorie.icons[0].url">
+                    <span>{{categorie.name}}</span>
+                    
+                </li>
+            }
+        }
     </ul>
    
 </div>

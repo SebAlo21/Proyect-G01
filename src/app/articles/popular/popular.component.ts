@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { spotifyService } from '../../shared/service/spotifyApi';
+import { Artista } from '../../shared/service/interfaceApi';
 
 @Component({
   selector: 'app-popular',
@@ -7,6 +9,10 @@ import { Component } from '@angular/core';
   templateUrl: './popular.component.html',
   styleUrl: './popular.component.css'
 })
-export class PopularComponent {
+export class PopularComponent implements OnInit {
 
+  
+  ngOnInit(): void {  
+      
+  }
 }

@@ -19,6 +19,10 @@ export class MyListComponent implements OnInit{
   ngOnInit(): void {
     this.cargarDataFetch()
   }
+
+
+
+  
   async cargarDataFetch(){
     this.tokenVariable= await this.album.spotifyToken()
     console.log(this.tokenVariable)

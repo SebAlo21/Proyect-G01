@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Categorie } from '../../shared/service/interfaceApi';
+import { spotifyService } from '../../shared/service/spotifyApi';
 
 @Component({
   selector: 'app-genres',
@@ -8,33 +10,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './genres.component.css'
 })
 export class GenresComponent implements OnInit{
-listaGeneros:Array<any>=[]
+
+  constructor(private categorie:spotifyService){}
+
+tokenVariable:string=''
+listaGeneros:Categorie[]=[]
+
 
 ngOnInit(): void {
-  this.listaGeneros=[
-    {
-      name:'Rock',
-      imagen:'../../../assets/img/rock.jpg'
-    },
-    {
-      name:'Jazz',
-      imagen:'../../../assets/img/jazz.jpg'
-    },
-    {
-      name:'Pop',
-      imagen:'../../../assets/img/pop.jpg'
-    },
-    {
-      name:'Electronica',
-      imagen:'../../../assets/img/electronica.jpg'
-    },
-    {
-      name:'Baladas',
-      imagen:'../../../assets/img/baladas.jpg'
-    }
-    
+  this.cargarDataFetch()
+}
 
-  ]
+async cargarDataFetch(){
+  this.tokenVariable= await this.categorie.spotifyToken()
+  console.log(this.tokenVariable)
+
+  this.listaGeneros= await this.categorie.cargarGeneros(this.tokenVariable)
+  console.log("Albums Fetch",this.listaGeneros)
 }
 
 }

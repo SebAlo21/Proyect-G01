@@ -15,3 +15,9 @@ export interface Artista{
 export interface Image{
     url:string
 }
+
+export interface Categorie{
+    id:string
+    name:string
+    icons:Image[]
+}

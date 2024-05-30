@@ -12,4 +12,6 @@ export const homeRoutes:Routes=[
     {
         path:'popular',loadComponent:()=>import('../articles/popular/popular.component').then((c)=>c.PopularComponent)
     }
+
+    
 ]
