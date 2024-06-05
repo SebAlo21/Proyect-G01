@@ -6,11 +6,19 @@
             @for(album of listaAlbum;track album.id){
                 <li>
                     <div class="container-card">
+                        <img [src]="album.album.images[0].url">
+                      
+                        <span >Foto: {{album.album.images[0].url}}</span>
+                        <span >Nombre Album: {{album.album.name}}</span>
+                        <span >Fecha Salida Album: {{album.album.release_date}}</span>
+                        <span >Total Canciones ALBUM: {{album.album.total_tracks}}</span>
+
                         <span>Nombre Artista: {{album.artists[0].name}} </span>
-                        <span >Nombre Album: {{album.name}}</span>
-                        <span >Fecha Salida: {{album.release_date}}</span>
-                        <span >Total Canciones: {{album.total_tracks}}</span>
-                        <img  [src]="album.images[0].url" >             
+
+
+
+                        <span >Nombre Cancion: {{album.name}}</span>
+                        <span >Numero de cancion en Album: {{album.track_number}}</span>
                         
                     </div>
                 </li>

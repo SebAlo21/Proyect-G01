@@ -1,0 +1,25 @@
+ 
+ 
+<div class="container-album">
+  <h2>Album Musicales</h2>
+ <div class="scroll-album">
+
+    <ul>
+      @for(album of listaAlbumHttp;track album.nombre){
+        <li (click)="seleccionAlbum(album)" class="album">
+          <div class="container-image">
+            <img  [src]="album.image"> 
+            <div class="container-texto">
+              <span>Nombre Album: {{ album.nombre }}</span>
+              <span>Total de Canciones: {{ album.total }}</span>
+            </div>
+          </div>
+        </li>
+      }
+     
+    </ul>
+     
+  </div>
+  
+</div>
+  

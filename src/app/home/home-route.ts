@@ -3,13 +3,15 @@ import { Routes } from "@angular/router";
 export const homeRoutes:Routes=[
     
     {
-     path:'generos',loadComponent:()=>import('../articles/genres/genres.component').then((c)=>c.GenresComponent)
+     path:'album',loadChildren:()=>import('../articles/albums/album-route').then((m)=>m.albumRoutes)
     }
     ,
     {
         path:'lista',loadComponent:()=>import('../articles/my-list/my-list.component').then((c)=>c.MyListComponent)
     },
+ 
     {
-        path:'popular',loadComponent:()=>import('../articles/popular/popular.component').then((c)=>c.PopularComponent)
+        path:'buscar',loadChildren:()=>import('../articles/buscar/buscar-route').then(m=>m.buscarRoutes)
+
     }
 ]

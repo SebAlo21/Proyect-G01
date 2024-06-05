@@ -1,0 +1,59 @@
+ 
+<div class="container-cancion">
+  <div class="album-header">
+    
+    @if(dataHttp){
+      <div class="cover">
+        <img  [src]="dataHttp.image"  >
+      </div>
+      <div class="content-text" >
+        <div class="small-text">Album</div>
+        <h1>{{dataHttp.nombre}}</h1>
+        <h5 class="small-text">Fecha: {{dataHttp.fecha}}<span class="count-tracks">Total Tracks: {{dataHttp.total}}</span> </h5>
+     </div>
+    }
+    @else {
+       
+      <div class="cover">
+        <img  src="../../../../../assets/img/electronica.jpg"  >
+      </div>
+      <div class="content-text" >
+        <div class="small-text">Album</div>
+        <h1>Nombre Album</h1>
+        <h5 class="small-text">Fecha: 2007-05-12<span class="count-tracks">Total Tracks: 12</span> </h5>
+     </div>
+    }
+
+    
+  </div>
+
+  <div class="album-body">
+    <ul class="album-table-header" >
+        <li>Canciones </li>
+        <li>Artista </li>
+        <li>Duración</li>
+        
+    </ul>
+    @for(c of dataHttp.cancion;track c.name){
+      <ul class="album-rows" >
+        <li class="track-name" (click)="seleccionCancion(c)">
+          <div class="cover-section">
+              <img  class="cover-track" [src]="dataHttp.artista.imagen" [alt]="dataHttp.artista.nombre">
+              <div class="cover-info">
+                  <div class="name-track">{{c.nombre}}</div>
+              </div>
+          </div>
+        </li>
+        <li class="text-opacity">
+            {{dataHttp.artista.nombre}}
+        </li>
+        <li class="text-opacity">
+          {{c.tiempo}}
+        </li>
+    </ul>
+    }
+   
+  </div>
+  
+</div>
+

@@ -1,13 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root{
-    --primary-color:#323232;
+    --primary-color:#ffffff14;
     --secondary-color:#181818;
     --ter-color:#FFFFFF;
     --four-color:rgb(185, 92, 38);
+    --five-color:#000000;
     --font-family:"Karantina", system-ui;
-    --font-size:1.1rem;
-    --font-size-2: 1.4rem;
+    --font-size:1rem;
+    --font-size-0:1.1rem;
+    --font-size-1:1.4rem;
+    --font-size-2: 2.5rem;
     --font-size-titulo: 3.6rem;
 }
 
@@ -19,9 +22,20 @@ body {
     font-family: var(--font-family);
     font-size: var(--font-size);
     color: var( --ter-color);
-    background-color: var(--secondary-color);
+    background-color: var( --secondary-color);
+    overflow-y: scroll; 
  
 }
 button{
     padding: 0px;
 }
+::-webkit-scrollbar{
+    width: 6px; 
+}
+::-webkit-scrollbar-thumb{
+    background: var( --secondary-color); 
+}
+::-webkit-scrollbar-track {
+    background: var(--five-color)
+  }
+ 

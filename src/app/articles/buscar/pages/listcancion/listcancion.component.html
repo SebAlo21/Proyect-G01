@@ -1,0 +1,31 @@
+<div class="play-list-body">
+    <ul class="play-list-table-header">
+        <li  >Canción </li>
+        <li  >Álbum </li>
+        <li>Artista</li> 
+        <li>Duracion</li>
+    </ul>
+    @for(cancion of canciones;track cancion.name){
+        <ul class="play-list-rows" (click)="seleccionCancion(cancion)">
+            <li class="track-name">
+                <div class="cover-section">
+                    <img appImgBroken class="cover-track" [src]="cancion.artistaImagen" [alt]="cancion.nombre">
+                    <div class="cover-info">
+                        <div class="name-track">{{cancion.nombre}}</div> 
+                    </div>
+                </div>
+            </li>
+            <li class="track-name-opacity">
+                {{cancion.albumNombre}}
+            </li>
+            <li class="track-name-opacity">
+                {{cancion.artistaNombre}}
+            </li>
+            <li class="track-name-opacity">
+                {{cancion.tiempo}}
+            </li>
+        </ul>
+    }
+   
+<button (click)="createPlaylist()">Create Playlist</button>
+</div>

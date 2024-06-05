@@ -13,7 +13,8 @@ export class MyListComponent implements OnInit{
 
   constructor(private album:spotifyService){}
 
-  listaAlbum:Album[]=[]
+  //listaAlbum:Album[]=[]
+  listaAlbum:Array<any>=[]
   tokenVariable:string=''
 
   ngOnInit(): void {

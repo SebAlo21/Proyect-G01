@@ -4,8 +4,8 @@ import { Injectable } from "@angular/core";
     providedIn:'root'
 })
 export class spotifyService{
-    clientId = '';
-    clientSecret = '';
+    clientId = 'cb2143879a564de7a8ffed71fbeeed21';
+    clientSecret = 'cb62067e5ea94222bab7d4eb98f57cd1';
 
     async spotifyToken():Promise<any>{
         const response = await fetch('https://accounts.spotify.com/api/token', {
@@ -24,11 +24,16 @@ export class spotifyService{
     }
     async cargarAlbum(token:string):Promise<any>{
         const features="https://api.spotify.com/v1/browse/featured-playlists";
-        const result=await fetch(`https://api.spotify.com/v1/browse/new-releases?limit=40&offset=0`,{
+        const albums=`https://api.spotify.com/v1/artists/2DaxqgrOhkeH0fpeiQq2f4/albums`
+        const nuevosLanzamientos=`https://api.spotify.com/v1/browse/new-releases?limit=40&offset=0`
+        
+        const result=await fetch(`https://api.spotify.com/v1/artists/6XyY86QOPPrYVGvF9ch6wz/top-tracks`,{
           method:'GET',
           headers:{'Authorization': `Bearer ${token}`}
         })
         const data=await result.json();
-        return data.albums.items 
+        console.log(data)
+        //return data.albums.items 
+        return data.tracks
     }
 }

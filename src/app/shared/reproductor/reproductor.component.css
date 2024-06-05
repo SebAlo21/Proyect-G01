@@ -15,6 +15,7 @@
 .reproductor:nth-child(1){
     display: flex;
     flex-direction: column;
+    font-size: var(--font-size-1);
 }
 .reproductor:nth-child(2){
     display: flex;
@@ -41,4 +42,21 @@ gap: .5rem;
 }
 .button:hover{
     opacity: .7;
+}
+@media (max-width: 1250px) {
+    
+#container-reproductor{
+
+    height: 55px;
+    padding: 10px;
+    display: flex;
+}
+.button{ 
+    font-size: 1.15rem;
+    padding: 5px;
+}
+.reproductor:nth-child(1){
+    font-size: var(--font-size);
+    line-height: 1.2rem;
+}
 }

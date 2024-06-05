@@ -26,9 +26,9 @@
     letter-spacing: 1.2px;
 }
 .side-bar-list .container-li{
-    font-size: 1.2rem; 
     display: flex;
     align-items: center; 
+    font-size: var(--font-size-1);
 }
  
 .side-bar-separator{
@@ -56,4 +56,15 @@
 .container-logo button:hover{
  
     color: var(--primary-color);
+}
+@media (max-width: 1250px) {
+    .side-bar-list .container-li{
+        font-size: var(--font-size);
+        display: flex;
+        align-items: center; 
+    }
+    .side-bar{
+        width: 12.5rem; 
+        padding: .5rem 1rem; 
+    }
 }

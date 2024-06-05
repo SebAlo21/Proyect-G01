@@ -28,21 +28,21 @@ export class SideBarComponent implements OnInit{
         router:['/']
       },
       {
-        name:'generos',
+        name:'Album',
         icon:'fa-music',
-        router:['/','generos']
+        router:['/','album']
       }
       ,
       {
         name:'lista',
         icon:'fa-list',
         router:['/','lista']
-      }
+      } 
       ,
       {
-        name:'popular',
-        icon:'fa-heart',
-        router:['/','popular']
+        name:'Buscar',
+        icon:'fa-magnifying-glass',
+        router:['/','buscar']
       }
      ]
      this.listaRecomendados=[
