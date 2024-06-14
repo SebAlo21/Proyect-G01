@@ -1,0 +1,81 @@
+.container-img{
+    background-image: url('../../../../assets/img/fondo2.jpg');
+    position: relative;
+    height: 100vh; 
+    background-size: cover;
+    background-position: center;
+}
+.container-login{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-4);
+    color: var(--color-3);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.container-login h1{
+    color: var(--primary-color);
+}
+.login{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.login h1{
+    color: var(--four-color);
+    font-size: var(--font-size-titulo);
+}
+input.ng-invalid.ng-touched {
+    border: solid 2px red !important
+}
+
+.form{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.form-button{
+width: 100%;
+background-color: var(--four-color)
+}
+.container-input{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+.container-input label{
+    color: var(--four-color);
+    font-size: var(--font-size-1);
+    font-weight: 800;
+}
+.container-input-error label{
+    color:  red;
+    font-size: var(--font-size-1);
+    font-weight: 400;
+}
+.container-input input{
+    font-size: var(--font-size-1);
+}
+.form-button button{
+    width: 100%;
+    font-size: var(--font-size-1);
+    border: 0;
+ 
+ color: var(--four-color);
+    transition: 1.s;
+}
+ 
+ 
+@media (max-width: 850px) {
+    .login{
+        width: 45%;
+       
+    }
+}

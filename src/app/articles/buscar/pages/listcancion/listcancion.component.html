@@ -1,18 +1,85 @@
 <div class="play-list-body">
+    @if(token){
+        <div class="botones">
+            <div class="boton-modal"> <label for="btn-modal">Crear PlayList</label></div>
+            <input type="checkbox" id="btn-modal">
+            <div class="container-modal">
+               <div class="content-modal">
+                    <h2>Crear Playlist</h2>  
+                    <input type="text" [(ngModel)]="nombrePlaylistCrear" placeholder="Nombre de la playlist" >
+                    <span>Ingrese nombre</span>
+                    @if(!validarNombrePlaylist()){
+                    <div class="validar-nombre">
+                    <span> Ingrese un nombre válido</span>
+                    </div>
+                    }
+                
+                    <div class="contenedor-boton">
+                        <div class="btn-cerrar"> <label for="btn-modal">Cerrar</label></div>
+                        <div class="btn-cerrar">
+                            <button for="btn-modal" (click)="crearPlaylist()" [disabled]="this.listaCancion.length==0 || !validarNombrePlaylist()">Guardar</button>
+                        </div>
+                    </div> 
+               </div>
+               <label for="btn-modal" class="cerrar-modal"></label>
+            </div>
+
+
+            @if(this.playlistRecibido){
+                <div class="boton-modal"><label for="btn-modal2">Actualizar Playlist</label></div>
+                <input type="checkbox" id="btn-modal2">
+                <div class="container-modal2">
+                   <div class="content-modal">
+                        <h2>Actualizar Playlist</h2>  
+                        <label class="playlist-n" for="playlist-select">Selecciona una playlist:</label>
+                        
+                        <select id="playlist-select" [(ngModel)]="playlistSeleccionado" (change)="datosSelect()">
+                            @for(playlist of playlistRecibido;track playlist.nombre){
+                            <option [value]="playlist._id">{{ playlist.nombre }}</option>
+                            }
+                        </select><br><br>
+    
+                    
+                        @if(!validarNombrePlaylist2()){
+                            <div class="validar-nombre"><span> Ingrese un nombre válido</span></div>
+                        }
+                        <div class="contenedor-boton">
+                        <div class="btn-cerrar"><label for="btn-modal2">Cerrar</label></div>
+                        <div class="btn-cerrar">
+                            <button for="btn-modal" (click)="actualizarPlaylist()" [disabled]="this.listaCancion.length==0 ||!validarNombrePlaylist2()">Guardar</button>
+                        </div>
+                    </div>
+                   </div>
+                   <label for="btn-modal2" class="cerrar-modal"></label>
+                </div>
+            }
+           
+        </div>
+       }
     <ul class="play-list-table-header">
         <li  >Canción </li>
         <li  >Álbum </li>
         <li>Artista</li> 
-        <li>Duracion</li>
+        @if(!token){
+
+            <li>Tiempo</li>
+        }
+        @else {
+            <li>Agregar</li>
+        }
     </ul>
     @for(cancion of canciones;track cancion.name){
-        <ul class="play-list-rows" (click)="seleccionCancion(cancion)">
-            <li class="track-name">
-                <div class="cover-section">
-                    <img appImgBroken class="cover-track" [src]="cancion.artistaImagen" [alt]="cancion.nombre">
+        <ul class="play-list-rows" >
+            <li class="track-name" (click)="playCancion(cancion)" >
+                <div class="cover-section" >
+                    <div class="container-play">
+                        <button> <i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <img class="cover-track" [src]="cancion.artistaImagen" [alt]="cancion.nombre">
                     <div class="cover-info">
                         <div class="name-track">{{cancion.nombre}}</div> 
                     </div>
+                   
                 </div>
             </li>
             <li class="track-name-opacity">
@@ -21,11 +88,21 @@
             <li class="track-name-opacity">
                 {{cancion.artistaNombre}}
             </li>
-            <li class="track-name-opacity">
-                {{cancion.tiempo}}
-            </li>
+            @if(!token){
+                <li class="track-name-opacity">
+                    {{cancion.tiempo}}
+                </li>
+            }
+            @else {
+                <li>
+                    <label class="switch">
+                        <input type="checkbox" (change)="seleccionCancion(cancion,  $event)">
+                        <span class="slider"></span>
+                    </label>
+                </li>
+            }
+           
         </ul>
     }
-   
-<button (click)="createPlaylist()">Create Playlist</button>
+
 </div>

@@ -1,33 +1,25 @@
 import { CommonModule } from '@angular/common';
-import { Component,EventEmitter,OnInit,Output } from '@angular/core';
-import { AlbumsService } from '../../service/albums.service';
+import { Component,EventEmitter,Input,OnInit,Output } from '@angular/core';
+import { AlbumsService } from '../../../../shared/service/album/albums.service';
 import { Album } from '../../../../shared/modules/albums';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-album',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './album.component.html',
   styleUrl: './album.component.css'
 })
-export class AlbumComponent implements OnInit{
-
-  listaAlbumHttp:Array<Album>=[]
+export class AlbumComponent  {
   @Output() datosAlbum = new EventEmitter<any>();
+  @Input() envioListaAlbum:Array<any>=[]
 
-  constructor(private musicService:AlbumsService){}
+  constructor(){}
   
   seleccionAlbum(album: any) { 
     this.datosAlbum.emit(album)
   }
-
-  ngOnInit(): void { 
-   this.cargarAlbumHttp()
-  }
-
-  async cargarAlbumHttp():Promise<any>{
-    this.listaAlbumHttp= await this.musicService.getBDHttp().toPromise()
-    
-  }
+ 
 
 }

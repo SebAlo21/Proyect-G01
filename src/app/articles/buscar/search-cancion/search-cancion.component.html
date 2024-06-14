@@ -1,5 +1,5 @@
 
 <div class="container-buscar">
-    <app-search (envioDatos)="parametroBusqueda($event)"></app-search>
-    <app-listcancion [canciones]="obtenerCancionesHttp"></app-listcancion>
+    <app-search (envioDatos)="parametroBusqueda($event)" ></app-search>
+    <app-listcancion [canciones]="envioCanciones" [playlistRecibido]="envioPlaylist"  [token]="envioToken"></app-listcancion>
 </div>

@@ -1,14 +1,28 @@
 <div id="container-reproductor">
     <div class="reproductor">
-        <span>Nombre Usuario: Test</span>
-          <span>Email: testgmail.com</span>
+        @if(cancion){
+       
+           
+               <div class="cover-section" >
+                   <div class="cover-track ">
+                       <img  [src]="cancion.artistaImagen"  >
+                   </div>
+                  
+       
+                   <div class="cover-info">
+                     <div class="name-track">{{cancion.nombre}}</div>
+                   </div>
+                   
+               </div>
+            
+          } 
     </div>
     <div class="reproductor">
         <div class="container-button">
             <button class="button">
                 <i class="fa-solid fa-arrow-left"></i>
             </button>
-            <button  class="button">
+            <button  class="button" (click)="pausarCancion()">
                 <i class="fa-solid fa-play"></i>
 
             </button>
@@ -18,7 +32,17 @@
         </div>
     </div>
     <div class="reproductor">
+    
+        @if(usuario){
+            <span>Usuario: {{usuario.nombre}}</span>
+            <span>Email: {{usuario.correo}}</span>
+           }
+           @else { 
+            <span></span>
+            <span></span>
+           }
         
+      
     </div>
 
 </div>

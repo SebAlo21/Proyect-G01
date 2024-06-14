@@ -1,0 +1,43 @@
+<div class="container-img">
+    <div class="container-login">
+        <div class="login">
+            <h1>Registrar Usuario</h1>
+            <form (ngSubmit)="enviarDatosRegistro()" [formGroup]="formLogin" class="form">
+                <div class="container-input">
+                    <label >Nombre Usuario</label>
+                    <input formControlName="nombre" type="text" placeholder="Nombre" class="form-input">
+                </div>
+                <div class="container-input">
+                    <label >Edad Usuario</label>
+                    <input formControlName="edad"type="text" placeholder="Edad" class="form-input">
+                </div>
+                <div class="container-input">
+                    <label >Dirección de correo o nombre de usuario</label>
+                    <input formControlName="correo" type="text" placeholder="Dirección de correo o nombre de usuario" class="form-input">
+                </div>
+                <div class="container-input">
+                    <label >Contraseña</label>
+                    <input formControlName="contraseña" type="password" placeholder="Contraseña" class="form-input">
+                </div>
+                @if(errorRegistro){
+                    <div class="container-input-error">
+                        <label > Ocurrio un error con tu registro</label>
+                    </div>
+                }
+        
+                 
+                <div class="form-button">
+                    <button  [disabled]="formLogin.invalid" >Registrar</button>
+                </div>
+                <br>
+           
+               
+                
+            </form>
+            <div class="form-button">
+                <button [routerLink]="'/login'" >Regresar</button>
+            </div>
+        </div>
+     
+    </div>
+</div>

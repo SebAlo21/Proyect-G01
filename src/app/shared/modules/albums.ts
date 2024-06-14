@@ -16,4 +16,12 @@ export interface Cancion{
     nombre:string
     url:string
     reproducciones:number
+    artistaImagen:String
+}
+export interface Playlist{
+    createdAt:string
+    nombre:string
+    nombreUsuario:string
+    updatedAt:string
+    cancion:Cancion[]
 }

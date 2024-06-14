@@ -1,6 +1,5 @@
-import { Injectable } from '@angular/core';
-import * as dataRaw from '../../../core/bd.json';
-import { Album, Cancion } from '../../../shared/modules/albums';
+import { Injectable } from '@angular/core'; 
+import { Album, Cancion } from '../../modules/albums';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 
@@ -12,7 +11,6 @@ export class AlbumsService {
 
   dataBd:Array<any>[]=[]
   listaAlbum:Album[]=[]
-  private playlists: any[] = [];
   public audio!:HTMLAudioElement
 
   constructor(private httpClient:HttpClient) {
@@ -23,8 +21,11 @@ export class AlbumsService {
     this.audio.src=`http://localhost:5000/${cancion.url}`
     this.audio.play()
   }
+  setPause(){
+    this.audio.pause()
+  }
 
-  getBDHttp():Observable<any>{
+  getBDHttp(){
     return this.httpClient.get(`http://localhost:5000/api/album`)
     .pipe(
       map((dataRaw:any)=>{
@@ -36,16 +37,18 @@ export class AlbumsService {
      return this.getBDHttp().pipe(
       map((albums:Album[])=>{
         return albums.reduce((listaCanciones:any,albumInterator:Album)=>{
-          const agregar=albumInterator.cancion.map((cancion:Cancion)=>({
+          const nuevoArreglo=albumInterator.cancion.map((cancion:Cancion)=>({
             url:cancion.url,nombre:cancion.nombre,tiempo:cancion.tiempo,
-            albumNombre:albumInterator.nombre,
-            artistaNombre:albumInterator.artista.nombre,artistaImagen:albumInterator.artista.imagen
+            albumNombre:albumInterator.nombre,albumImagen:albumInterator.image,
+            artistaNombre:albumInterator.artista.nombre,artistaImagen:cancion.artistaImagen
           }))
-          return listaCanciones.concat(agregar)
+          return listaCanciones.concat(nuevoArreglo)
         },[])
       })
      )
   }
+ 
+ 
  
   getBusquedaHttp(buscar:string){
     return this.getAllSongHttp().pipe(
@@ -58,17 +61,7 @@ export class AlbumsService {
       ))
     ) 
   }
- 
-
-  createPlaylist(nombre:string,canciones:Cancion[]){
-      const playList={
-        nombre,canciones
-      }
-      this.playlists.push(playList)
-  }
-  getPlaylist(){
-    return this.playlists
-  }
+  
    
  
  

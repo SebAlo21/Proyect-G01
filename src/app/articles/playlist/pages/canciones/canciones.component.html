@@ -1,0 +1,59 @@
+  
+ @if(playlistSeleccionada){
+ <div class="container-cancion">
+    <div class="album-header">
+        <div class="cover">
+            <img  [src]="playlistSeleccionada.cancion[0].albumImagen"  >
+        </div>
+        <div class="content-text" >
+          <div class="small-text">Nombre</div>
+          <h1>{{playlistSeleccionada.nombre}}</h1>
+          <h5 class="small-text">Fecha: {{formatearFecha(playlistSeleccionada.createdAt)}}<span class="count-tracks">Usuario: {{playlistSeleccionada.nombreUsuario}}</span> </h5>
+       </div>
+    </div>
+    <div class="album-body">
+      <ul class="album-table-header" >
+          <li>Canción </li>
+          <li>Artista </li>
+          <li>Album</li>
+      </ul>
+        @for(c of playlistSeleccionada.cancion;track c.name) {
+            <ul class="album-rows" >
+              <li class="track-name"  >
+              
+                <div class="cover-section" (click)="playCancion(c)">
+                  <img  class="cover-track" [src]="c.artistaImagen" [alt]="c.albumNombre">
+
+                  <div class="cover-info">
+                    <div class="name-track">{{c.nombre}}</div>
+                  </div>
+                  <div class="container-play">
+                      <button> <i class="fa-solid fa-play"></i></button>
+                  </div>
+              </div>
+              </li>
+              <li class="text-opacity">
+                  {{c.artistaNombre}}
+              </li>
+              <li class="text-opacity">
+                {{c.albumNombre}}
+              </li>
+          </ul>
+          }
+    </div>
+  </div>
+  
+} @else {
+  <div class="container-cancion">
+      <div class="album-header">
+        <div class="cover">
+            <img   >
+        </div>
+        <div class="content-text" >
+          <div class="small-text"></div>
+          <h1>Tus playlist</h1>
+          <h5 class="small-text"><span class="count-tracks"></span> </h5>
+      </div>
+    </div>
+  </div>
+}

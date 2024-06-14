@@ -15,17 +15,35 @@
     </ul>
     <div class="side-bar-separator"></div>
     <ul class="side-bar-list "> 
-        @for(listaRecomendados of listaRecomendados;track listaRecomendados.name){
-            <li >
+     @if(this.controlBoton){
+      <!--
+          <li>
+            <div class="container-li ">
+                <span class="side-bar-list list-span titulo">Mis Playlist</span>
+            </div>
+        </li>
+        @for(listaRecomendados of listaRecomendados;track listaRecomendados.nombre){
+            <li [routerLink]="'/playlist'" >
                 <div class="container-li ">
-                    <span class="side-bar-list list-span">{{listaRecomendados.name}}</span>
+                    <span class="side-bar-list list-span">-{{listaRecomendados.nombre}}</span>
                 </div>
             </li>
         }
+        -->
+     }
       
     </ul>
-    <div class="container-logo">
-        <button [routerLink]="'/login'">Iniciar Sesión</button>
-        
-    </div>
+    @if(this.controlBoton){
+        <div class="container-logo">
+            <button [routerLink]="'/login'" (click)="salirSesion()" >Salir Sesión</button>
+        </div>
+    }
+    @else {
+        <div class="container-logo">
+            <button [routerLink]="'/login'">Iniciar Sesión</button>
+            
+        </div>
+    }
+    
+    
 </div>

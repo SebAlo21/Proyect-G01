@@ -1,0 +1,24 @@
+
+@if(envioPlaylist){
+<div class="container-album">
+    <h2>PlayList </h2>
+   <div class="scroll-album">
+  
+      <ul>
+        
+          @for(playlist of envioPlaylist;track playlist.nombre){
+            <li (click)="seleccionPlayList(playlist)"  class="album">
+              <div class="container-image"> 
+                <img  [src]="playlist.cancion[0].albumImagen"  >
+                <div class="container-texto">
+                  <span>Nombre Album: {{ playlist.nombre }}</span>
+                  <span>Total de Canciones: {{ playlist.createdAt }}</span>
+                </div>
+              </div>
+            </li>
+          }
+       
+      </ul>
+    </div>
+  </div>
+}

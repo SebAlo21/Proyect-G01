@@ -1,33 +1,36 @@
 import { CommonModule } from '@angular/common';
 import { Component ,EventEmitter,Input, OnInit,Output} from '@angular/core';
-import { AlbumsService } from '../../service/albums.service';
+import { AlbumsService } from '../../../../shared/service/album/albums.service';
 import { Album, Cancion } from '../../../../shared/modules/albums';
+import { lastValueFrom } from 'rxjs';
+import { playlistService } from '../../../playlist/services/playlist-service';
 
 @Component({
   selector: 'app-cancion',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './cancion.component.html',
   styleUrl: './cancion.component.css'
 })
 export class CancionComponent implements OnInit{
   
 
-  @Input() dataHttp:any
+  @Input() albumSeleccionado:any
+  listaAlbumHttp:Array<Album>=[] 
 
-  listaAlbumHttp:Array<Album>=[]
-  constructor(private albumService:AlbumsService){}
+  constructor(private albumService:AlbumsService,private playlistService:playlistService){}
 
   ngOnInit(): void {
    this.cargarAlbumHttp()
   }
-  seleccionCancion(song: any) {
-    this.albumService.setCancion(song)
+  playCancion(cancion: any) {
+    this.albumService.setCancion(cancion)
+    this.playlistService.changeData(cancion)
   }
   async cargarAlbumHttp():Promise<any>{
     this.listaAlbumHttp= await this.albumService.getBDHttp().toPromise()
-    this.dataHttp=this.listaAlbumHttp[0]
-    console.log(this.dataHttp)
+    this.albumSeleccionado=this.listaAlbumHttp[0] 
+    console.log(this.albumSeleccionado)
   }
 
 }

@@ -24,6 +24,11 @@
 .side-bar-list .list-span{
     font-weight: 400;
     letter-spacing: 1.2px;
+    color: var(--ter-color);
+}
+
+.side-bar-list .list-span.titulo{
+font-weight: 800; 
 }
 .side-bar-list .container-li{
     display: flex;
@@ -41,21 +46,23 @@
 }
 .container-logo{
     width: 90%;
-    background-color: var(--ter-color);
+  
 }
 .container-logo img{
     width: 100%;
 }
 .container-logo button{
-    width: 100%;
-    background-color: transparent;
+    width: 100%; 
     border: 0;
     color: var(--four-color);
     transition: 1s;
+    background-color: var(--ter-color);
+    padding: 0.5rem 0rem;
+    font-size: var(--font-size-1);
 }
 .container-logo button:hover{
- 
-    color: var(--primary-color);
+ background-color: var(--secondary-color);
+    color: var(--four-color);
 }
 @media (max-width: 1250px) {
     .side-bar-list .container-li{
@@ -66,5 +73,8 @@
     .side-bar{
         width: 12.5rem; 
         padding: .5rem 1rem; 
+    }
+    .container-logo button{
+        font-size: var(--font-size-0);
     }
 }

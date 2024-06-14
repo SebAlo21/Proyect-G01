@@ -1,8 +1,4 @@
 <div class="container">
-    
-        <app-album (datosAlbum)="obtenerAlbum($event)"></app-album>
- 
-        <app-cancion [dataHttp]="album" ></app-cancion>
-  
-       
+        <app-album (datosAlbum)="obtenerAlbum($event)" [envioListaAlbum]="listaAlbum"></app-album>
+        <app-cancion [albumSeleccionado]="album" ></app-cancion>  
 </div>

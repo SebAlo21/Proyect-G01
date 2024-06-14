@@ -29,6 +29,9 @@ body {
 button{
     padding: 0px;
 }
+button:disabled {
+    opacity: .5;
+}
 ::-webkit-scrollbar{
     width: 6px; 
 }

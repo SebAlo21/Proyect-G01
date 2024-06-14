@@ -1,0 +1,38 @@
+<div class="container-img">
+    <div class="container-login">
+        <div class="login">
+            <h1>Iniciar Sesión</h1>
+            <form  class="form" (ngSubmit)="enviarDatosLogin()"  [formGroup]="formLogin">
+               
+                <div class="container-input">
+                    <label >Dirección de correo o nombre de usuario</label>
+                    <input formControlName="correo"  type="email" placeholder="Dirección de correo o nombre de usuario" class="form-input">
+                </div>
+                <div class="container-input">
+                    <label >Contraseña</label>
+                    <input formControlName="contraseña"  type="password" placeholder="Contraseña" class="form-input">
+                </div>
+                @if(errorlogin){
+                    <div class="container-input-error">
+                        <label > Ocurrio un error con tu email o password</label>
+                    </div>
+                     
+                }
+                <div class="form-button">
+                    <button  [disabled]="formLogin.invalid">Iniciar sesión</button>
+                </div>
+                <br>
+              
+                
+            </form>
+            <div class="form-button">
+                <button [routerLink]="'/login/register'" >Registrar</button>
+            </div>
+            <br>
+            <div class="form-button">
+                <button [routerLink]="'/'" >Continuar sin iniciar sesión</button>
+            </div>
+        </div>
+     
+    </div>
+</div>
