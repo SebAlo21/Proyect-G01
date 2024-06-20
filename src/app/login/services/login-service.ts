@@ -12,7 +12,7 @@ export class loginServices {
   listaUsuarios(){
     return this.httpClient.get(`http://localhost:5000/api/auth`)
   }
-  registrarUsuarios(body:any){
+  registrarUsuarios(body:any):Observable<any>{
       
     return this.httpClient.post(`http://localhost:5000/api/auth/register`,body)
   }

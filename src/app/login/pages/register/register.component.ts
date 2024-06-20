@@ -17,15 +17,15 @@ export class RegisterComponent implements OnInit {
   constructor(private usuarioService:loginServices,private router:Router){}
   
   ngOnInit(): void {
-     
+    this.formulario()
+  }
+  
+  formulario(){
     this.formLogin=new FormGroup({
       nombre:new FormControl('',[
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(50)
-      ]),
-      edad:new FormControl('',[
-        Validators.required
       ]),
       correo: new FormControl('',[
         Validators.required,
@@ -37,18 +37,19 @@ export class RegisterComponent implements OnInit {
         Validators.maxLength(22)
       ])
     })
-    
   }
   
-  async enviarDatosRegistro():Promise<any>{ 
+  async enviarDatosRegistro(){ 
     try {
-      await this.usuarioService.registrarUsuarios(this.formLogin.value).toPromise()
-   
-      this.router.navigate(['/login']);  
-    } catch (error) {
+      const response= await this.usuarioService.registrarUsuarios(this.formLogin.value).toPromise()
+      if(response.data){
+        this.router.navigate(['/login']);  
+      }else{
+        this.errorRegistro=true
+      }
+    } catch (errorResponse) {
       this.errorRegistro=true
     }
-  
   } 
 
   

@@ -16,11 +16,10 @@ export class LoginComponent implements OnInit{
   errorlogin:boolean=false
   formLogin:FormGroup=new FormGroup({})
   private router: Router = new Router;
-  //listUsuarioHttp:any
+  
   constructor(private usuarioService:loginServices,private cokkie:CookieService){ }
 
   ngOnInit(): void {
-    //this.cargarUsuariosHttp()
     this.formLogin=new FormGroup({
       correo: new FormControl('',[
         Validators.required,
@@ -34,19 +33,11 @@ export class LoginComponent implements OnInit{
     })
   }
 
-/*
-    async cargarUsuariosHttp():Promise<any>{
-    this.listUsuarioHttp= await this.usuarioService.listaUsuarios().toPromise()
-    console.log(this.listUsuarioHttp)
-  }
-
-*/
 async enviarDatosLogin(){ 
     try {
      const response= await this.usuarioService.enviarCredencial(this.formLogin.value).toPromise()
     
-      const {token}=response.data
-      console.log("el token",response)
+      const {token}=response.data 
       const myFecha:Date=new Date()
       myFecha.setHours(myFecha.getHours()+1)
       this.cokkie.set('tokenUsuario',token,myFecha)
@@ -56,10 +47,5 @@ async enviarDatosLogin(){
       console.log("Error de auten",error)
       this.errorlogin=true
     }
-
-   
-     
-      
   } 
-  
 }
